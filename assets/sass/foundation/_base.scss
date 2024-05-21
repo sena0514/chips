@@ -1,0 +1,88 @@
+@use "sass:math";
+@use "fonts" as *;
+@use "../global" as *;
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*======= Colors ========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(170, 90%, 34%);
+  --first-color-dark: hsl(170, 100%, 28%);
+  --first-color-darken: hsl(170, 100%, 23%);
+  --second-color: hsl(45, 100%, 52%);
+  --second-color-dark: hsl(45, 100%, 20%);
+  --white-color: hsl(0, 0%, 100%);
+  --shadow-img: drop-shadow(0 12px 24px hsla(0, 0%, 0%, 0.4));
+  --shadow-circle: 0 12px 24px hsla(0, 0%, 0%, 0.4);
+  --shadow-button: 0 -4px 8px hsla(0, 0%, 0%, 0.3);
+  --shadow-card: 0 -8px 24px hsla(0, 0%, 0%, 0.3);
+  --shadow-text: 0 2px 4px var(--first-color-darken);
+
+  /*======= Fonts and typography ========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Titan One", sans-serif;
+  --biggest-font-size: 3.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+
+  /*======= Fonts weight ========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*======= Line height ========*/
+  --font-light: 1.5;
+
+  /*======= z index ========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*======= Responsive typography  ========*/
+@include mq("lg") {
+  :root {
+    --biggest-font-size: 5rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+  }
+}
+
+html {
+  font-size: math.div($root-font-size, 16px) * 100%;
+}
+
+body {
+  font-family: var(--body-font);
+  //font-size: var(--normal-font-size);
+  background-color: var(--first-color);
+  color: var(--white-color);
+  line-height: var(--font-light);
+
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-y: scroll;
+}

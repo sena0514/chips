@@ -1,0 +1,39 @@
+/*
+ * メディアクエリ用mixin
+ */
+ @use "functions" as *;
+ @use "variables" as *;
+ 
+ 
+ $breakpoints: (
+   // 480px以上(スマホの横向き)のモニタで適用
+   "sm": "screen and (min-width: #{to-em(480px, 16px)})",
+   // 768px以上のタブレットやモニタで適用
+   "md": "screen and (min-width: #{to-em(768px, 16px)})",
+   // 1280px以上のモニタで適用
+   "lg": "screen and (min-width: #{to-em(1280px, 16px)})",
+   // 1440px以上のモニタで適用
+   "xl": "screen and (min-width: #{to-em(1440px, 16px)})",
+ 
+   "xxl":
+     "screen and (min-width: #{to-em(1440px, 16px)}) and (max-width:#{to-em(1920px, 16px)})"
+ ) !default;
+ 
+ @mixin mq($breakpoint: md) {
+   @media #{map-get($breakpoints, $breakpoint)} {
+     @content;
+   }
+ }
+ 
+ @mixin content-width {
+   width: calc($content-main-width / $default-max-bp * 100%);
+   margin: 0 auto;
+   max-width: to-rem($content-max-width);
+ }
+ 
+ @mixin content-width-narrow {
+   width: calc($content-inner-width / $content-main-width * 100%);
+   max-width: 100%;
+   margin: 0 auto;
+ }
+ 

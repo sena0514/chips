@@ -1,0 +1,9 @@
+// サイト内フォントサイズ設定
+$default-min-bp: 375px; // _functions.scss / fluid-textで使用
+$default-bp: 1440px; // _functions.scss / fluid-textで使用
+$default-max-bp: 1920px; // _functions.scss / fluid-textで使用
+$root-font-size: 16px;
+
+// コンテンツ幅設定
+$content-main-width: 1200px;
+$content-inner-width: 1070px;
