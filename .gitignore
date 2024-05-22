@@ -1,0 +1,12 @@
+#package-lock.jsonを無視する
+package-lock.json
+
+#package.jsonを無視する
+package.json
+
+#gulpfile.jsを無視する
+#gulpfile.js
+
+#node_modulesを無視する
+/node_modules/
+
